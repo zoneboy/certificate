@@ -1,6 +1,6 @@
 import React from 'react';
 import { CertificateData } from '../types';
-import { RanLogo, SignatureHarold, SignatureCajetan, GoldSeal } from '../assets/graphics';
+import { SignatureHarold, SignatureCajetan, GoldSeal } from '../assets/graphics'; // Removed RanLogo as it's now embedded
 
 interface CertificateProps {
   data: CertificateData;
@@ -18,7 +18,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
         padding: '40px' // White border area
       }}
     >
-      {/* Top Right Green Corner Decoration (Moved outside inner container) */}
+      {/* Top Right Green Corner Decoration (Outside inner grey area) */}
       <div 
           className="absolute top-0 right-0 w-[250px] h-[250px]"
           style={{
@@ -27,7 +27,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
           }}
       />
 
-      {/* Bottom Left Green Corner Decoration (Moved outside inner container) */}
+      {/* Bottom Left Green Corner Decoration (Outside inner grey area) */}
       <div 
           className="absolute bottom-0 left-0 w-[250px] h-[250px]"
           style={{
@@ -46,9 +46,30 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
         {/* --- CONTENT --- */}
         <div className="z-10 w-full h-full flex flex-col px-16 pt-12 pb-8 relative">
           
-          {/* Logo Section */}
-          <div className="w-full flex justify-center mb-8">
-            <RanLogo />
+          {/* Logo Section - NEW embedded SVG logo */}
+          <div className="w-full flex justify-center mb-8 h-20">
+             {/* Embedded SVG logo from image */}
+             <svg viewBox="0 0 650 120" xmlns="http://www.w3.org/2000/svg" className="h-full w-auto">
+                {/* Left side circular graphic */}
+                <g id="RanLogoGraphic">
+                    {/* Green semicircle path flow with arrowhead */}
+                    <path d="M 145 60 A 35 35 0 0 0 75 60 l-10 -10 l10 -5 Z" fill="#417505" />
+                    {/* Grey semicircle path flow with arrowhead */}
+                    <path d="M 75 60 A 35 35 0 0 0 145 60 l10 10 l-10 5 Z" fill="#333" />
+                    
+                    {/* 'RAN' stylized text inside */}
+                    <text x="110" y="68" font-family="Roboto, sans-serif" font-weight="900" font-size="28" text-anchor="middle">
+                        <tspan fill="#333">R</tspan>
+                        <tspan fill="#417505">AN</tspan>
+                    </text>
+                </g>
+                
+                {/* Right side full name text */}
+                <g transform="translate(190,0)" id="RanLogoText">
+                    <text x="0" y="50" font-family="Roboto, sans-serif" font-weight="700" font-size="36" fill="#333" text-anchor="start">RECYCLERS</text>
+                    <text x="0" y="85" font-family="Roboto, sans-serif" font-weight="400" font-size="22" fill="#417505" text-anchor="start">ASSOCIATION OF NIGERIA</text>
+                </g>
+             </svg>
           </div>
 
           {/* Title Section */}
@@ -107,6 +128,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
             
             {/* President Signature */}
             <div className="flex flex-col items-center w-64">
+              {/* Using translate-y-6 to push it down over the line */}
               <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-60">
                  <SignatureHarold className="w-full h-full text-black" />
               </div>
@@ -122,6 +144,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
 
             {/* Secretary Signature */}
             <div className="flex flex-col items-center w-64">
+              {/* Using translate-y-4 to nudge it down slightly */}
               <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-12">
                  <SignatureCajetan className="w-full h-full text-black" />
               </div>
