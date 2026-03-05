@@ -106,8 +106,8 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
             </div>
           </div>
 
-          {/* Signatures Footer */}
-          <div className="w-full flex justify-between items-end mt-auto px-8 relative">
+          {/* Signatures Footer - Pushed up with mb-12 */}
+          <div className="w-full flex justify-between items-end mt-auto mb-12 px-8 relative">
             
             {/* President Signature */}
             <div className="flex flex-col items-center w-64">
