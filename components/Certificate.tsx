@@ -18,6 +18,24 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
         padding: '40px' // White border area
       }}
     >
+      {/* Top Right Green Corner Decoration (Moved outside inner container) */}
+      <div 
+          className="absolute top-0 right-0 w-[250px] h-[250px]"
+          style={{
+              background: '#417505',
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 80% 100%, 80% 20%, 0 20%)'
+          }}
+      />
+
+      {/* Bottom Left Green Corner Decoration (Moved outside inner container) */}
+      <div 
+          className="absolute bottom-0 left-0 w-[250px] h-[250px]"
+          style={{
+              background: '#417505',
+              clipPath: 'polygon(0 0, 20% 0, 20% 80%, 100% 80%, 100% 100%, 0 100%)' 
+          }}
+      />
+
       {/* Inner Grey Background Area */}
       <div 
         className="relative w-full h-full bg-[#eef0f4] flex flex-col items-center"
@@ -25,24 +43,6 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
             border: '0px solid white' 
         }}
       >
-        {/* Top Right Green Corner Decoration (L-Shape) */}
-        <div 
-            className="absolute top-0 right-0 w-[250px] h-[250px]"
-            style={{
-                background: '#417505',
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 80% 100%, 80% 20%, 0 20%)'
-            }}
-        />
-
-        {/* Bottom Left Green Corner Decoration (L-Shape) */}
-        <div 
-            className="absolute bottom-0 left-0 w-[250px] h-[250px]"
-            style={{
-                background: '#417505',
-                clipPath: 'polygon(0 0, 20% 0, 20% 80%, 100% 80%, 100% 100%, 0 100%)' 
-            }}
-        />
-
         {/* --- CONTENT --- */}
         <div className="z-10 w-full h-full flex flex-col px-16 pt-12 pb-8 relative">
           
@@ -107,8 +107,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
             
             {/* President Signature */}
             <div className="flex flex-col items-center w-64">
-              {/* Using translate-y-6 to push it down over the line */}
-              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-60">
+              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-6">
                  <SignatureHarold className="w-full h-full text-black" />
               </div>
               <div className="w-full h-0.5 bg-black mb-2 relative z-0"></div>
@@ -123,8 +122,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
 
             {/* Secretary Signature */}
             <div className="flex flex-col items-center w-64">
-              {/* Using translate-y-4 to nudge it down slightly */}
-              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-12">
+              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-4">
                  <SignatureCajetan className="w-full h-full text-black" />
               </div>
               <div className="w-full h-0.5 bg-black mb-2 relative z-0"></div>
