@@ -108,7 +108,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
             {/* President Signature */}
             <div className="flex flex-col items-center w-64">
               {/* Using translate-y-6 to push it down over the line */}
-              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-8">
+              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-60">
                  <SignatureHarold className="w-full h-full text-black" />
               </div>
               <div className="w-full h-0.5 bg-black mb-2 relative z-0"></div>
@@ -124,7 +124,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
             {/* Secretary Signature */}
             <div className="flex flex-col items-center w-64">
               {/* Using translate-y-4 to nudge it down slightly */}
-              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-8">
+              <div className="h-16 w-48 flex items-end justify-center z-10 translate-y-12">
                  <SignatureCajetan className="w-full h-full text-black" />
               </div>
               <div className="w-full h-0.5 bg-black mb-2 relative z-0"></div>
