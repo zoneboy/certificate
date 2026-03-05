@@ -44,7 +44,7 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
         }}
       >
         {/* --- CONTENT --- */}
-        <div className="z-10 w-full h-full flex flex-col px-16 pt-12 pb-8 relative">
+        <div className="z-10 w-full h-full flex flex-col px-16 pt-5 pb-8 relative">
           
           {/* Exact Logo Image */}
           <div className="w-full flex justify-center mb-8 h-20">
