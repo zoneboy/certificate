@@ -1,0 +1,5 @@
+{
+  "name": "RAN Certificate Generator",
+  "description": "A specialized tool to generate and print membership certificates for the Recyclers Association of Nigeria.",
+  "requestFramePermissions": []
+}
